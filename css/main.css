@@ -1,0 +1,957 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+html {
+  width: 100%;
+  max-width: 100%;
+  font-size: 16px;
+}
+@media screen and (min-width: 1920px) {
+  html {
+    font-size: 17px;
+  }
+}
+@media screen and (min-width: 2560px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+h1, h2, h3, p, a, li, span {
+  color: #1f1f1f;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+@media screen and (max-width: 1024px) {
+  h2 {
+    font-size: 2.25rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  h2 {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  h2 {
+    font-size: 1.75rem;
+  }
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+@media (max-width: 1024px) {
+  h3 {
+    font-size: 1.75rem;
+  }
+}
+@media (max-width: 768px) {
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 480px) {
+  h3 {
+    font-size: 1.25rem;
+  }
+}
+
+a {
+  cursor: pointer;
+}
+
+header {
+  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: calc(50px + 2rem);
+  padding: 1rem 4rem;
+  border-bottom: 3px solid #1f1f1f;
+  background-color: #9f0004;
+  z-index: 10;
+}
+header a {
+  text-decoration: none;
+  color: white;
+}
+header .logo {
+  width: 35%;
+  max-width: 35%;
+  height: 100%;
+  max-height: 100%;
+}
+header .logo a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: max-content;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+}
+header .logo a img {
+  height: 100%;
+  max-height: 100%;
+  width: auto;
+  max-width: 100%;
+}
+header .logo a span {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: white;
+  margin-left: 1rem;
+}
+header .menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: fit-content;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+header .menu-toggle .bar {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+header nav {
+  width: 65%;
+  max-width: 65%;
+}
+header nav .nav-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  float: right;
+  list-style-type: none;
+  width: max-content;
+  gap: 3rem;
+}
+header nav .nav-links li a {
+  position: relative;
+  font-size: 1.15rem;
+}
+header nav .nav-links li a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0%;
+  height: 2px;
+  border-radius: 10px;
+  background-color: goldenrod;
+  transition: all 0.3s ease-in-out;
+}
+header nav .nav-links li a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+main {
+  margin-top: calc(50px + 2rem);
+  background-color: #f2f2f2;
+}
+main .hero {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  aspect-ratio: 3840/2160;
+  padding-inline: 6rem;
+  background-image: url("../images/bg-header.webp");
+  background-size: 100% auto;
+  background-color: #e4e4e4;
+  background-position: center;
+}
+main .hero h1 {
+  position: absolute;
+  top: 10%;
+  color: #1f1f1f;
+}
+main .hero .title-small-screen {
+  display: none;
+}
+main .hero .title-large-screen {
+  display: block;
+}
+main .hero iframe {
+  position: absolute;
+  bottom: 5%;
+  max-width: 35%;
+  max-height: 200px;
+  border-radius: 12px;
+}
+main .container {
+  padding: 8rem 6rem;
+}
+main .container section .section-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+main .container section .section-title .line {
+  height: 4px;
+  flex: 0 1 20%;
+  background-color: #1f1f1f;
+  border: none;
+  border-radius: 10px;
+}
+main .container section:not(:first-child) {
+  margin-top: 8rem;
+}
+main .container .about .about-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  width: 100%;
+  max-width: 100%;
+}
+main .container .about .about-content .about-image {
+  position: relative;
+  flex: 0 0 27.5%;
+  aspect-ratio: 2160/3840;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+main .container .about .about-content .about-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 40px 20px rgba(0, 0, 0, 0.6);
+  transition: all 0.4s ease-in-out;
+  z-index: 5;
+  pointer-events: none;
+}
+main .container .about .about-content .about-image::after {
+  content: "";
+  position: absolute;
+  background-image: url("../images/lightning-icon.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 40%;
+  width: 40%;
+  top: 30%;
+  left: 30%;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+  z-index: 5;
+}
+main .container .about .about-content .about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: relative;
+  transition: all 0.4s ease-in-out;
+}
+main .container .about .about-content .about-image:hover::before {
+  box-shadow: inset 0 0 60px 40px rgba(0, 0, 0, 0.8);
+}
+main .container .about .about-content .about-image:hover::after {
+  visibility: visible;
+  opacity: 1;
+  height: 55%;
+  width: 55%;
+  top: 22.5%;
+  left: 22.5%;
+}
+main .container .about .about-content .about-image:hover img {
+  transform: scale(1.05) translateY(-10px);
+  filter: drop-shadow(0 0 10px currentColor);
+}
+main .container .about .about-content .about-info {
+  font-size: 1.1rem;
+}
+main .container .about .about-content .about-info p {
+  line-height: 1.6;
+}
+main .container .about .about-content .about-info p:not(:first-child) {
+  margin-top: 1rem;
+}
+main .container .about .about-content .about-info h3 {
+  margin-top: 2rem;
+}
+main .container .about .about-content .about-info .quotes blockquote {
+  position: relative;
+  font-style: italic;
+  padding-left: 1rem;
+  color: #444;
+  margin: 1.5rem 0;
+}
+main .container .about .about-content .about-info .quotes blockquote::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: goldenrod;
+  border-radius: 2px;
+}
+main .container .friends .friend-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+}
+main .container .friends .friend-cards .friend-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  aspect-ratio: 4/5;
+  border-radius: 1rem;
+  padding: 2rem;
+  background-color: #e4e4e4;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease-in-out;
+}
+main .container .friends .friend-cards .friend-card .flag {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 2.25rem;
+  height: 2.25rem;
+}
+main .container .friends .friend-cards .friend-card .friend-img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+  transition: all 0.4s ease-in-out;
+}
+main .container .friends .friend-cards .friend-card .card-overlay {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  width: calc(100% - 4rem);
+  max-width: calc(100% - 4rem);
+  transform: translateX(-50%);
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+main .container .friends .friend-cards .friend-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  background-color: #dcdcdc;
+}
+main .container .friends .friend-cards .friend-card:hover .friend-img {
+  transform: scale(1.05) translateY(-10px);
+  filter: drop-shadow(0 0 10px currentColor);
+}
+main .container .friends .friend-cards .friend-card:hover .card-overlay {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(-20px);
+}
+main .container .rivals .rival-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  width: 100%;
+}
+main .container .rivals .rival-cards .rival-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 4/3;
+  border-radius: 1rem;
+  padding: 2rem;
+  background-color: #e4e4e4;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease-in-out;
+}
+main .container .rivals .rival-cards .rival-card .flag {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 2.25rem;
+  height: 2.25rem;
+}
+main .container .rivals .rival-cards .rival-card .rival-img {
+  width: 75%;
+  max-width: 75%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+  transition: all 0.4s ease-in-out;
+}
+main .container .rivals .rival-cards .rival-card .card-overlay {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  width: calc(100% - 4rem);
+  max-width: calc(100% - 4rem);
+  transform: translateX(-50%);
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+main .container .rivals .rival-cards .rival-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  background-color: #dcdcdc;
+}
+main .container .rivals .rival-cards .rival-card:hover .rival-img {
+  transform: scale(1.05) translateY(-10px);
+  filter: drop-shadow(0 0 10px currentColor);
+}
+main .container .rivals .rival-cards .rival-card:hover .card-overlay {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(-20px);
+}
+main .container .sponsors {
+  position: relative;
+  overflow: hidden;
+  padding: 2rem 0;
+}
+main .container .sponsors::before, main .container .sponsors::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 150px;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+}
+main .container .sponsors::before {
+  left: 0;
+  background: linear-gradient(to right, #f2f2f2 0%, transparent 100%);
+}
+main .container .sponsors::after {
+  right: 0;
+  background: linear-gradient(to left, #f2f2f2 0%, transparent 100%);
+}
+main .container .sponsors .sponsors-carousel {
+  display: flex;
+  flex-direction: row;
+  width: 200%;
+  animation: carousel-loop 20s linear infinite;
+}
+main .container .sponsors .sponsors-carousel .sponsors-row {
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+  width: 100%;
+}
+main .container .sponsors .sponsors-carousel .sponsors-row .sponsor-logo img {
+  height: 130px;
+  max-height: 130px;
+  width: auto;
+  transition: all 0.3s ease-in-out;
+}
+main .container .sponsors .sponsors-carousel .sponsors-row .sponsor-logo img:hover {
+  transform: scale(1.1);
+}
+
+footer {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: "logo content" "copyright copyright";
+  gap: 2rem;
+  width: 100%;
+  max-width: 100%;
+  height: fit-content;
+  padding: 2rem 4rem;
+  background-color: #d3d3d3;
+  border-top: 5px solid #9f0004;
+}
+footer .logo {
+  grid-area: logo;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+}
+footer .logo a {
+  display: block;
+  width: fit-content;
+  max-width: 70%;
+  height: 70%;
+  max-height: 100%;
+  align-self: center;
+}
+footer .logo a img {
+  height: 100%;
+  max-height: 100%;
+  width: auto;
+  max-width: 100%;
+}
+footer .footer-content {
+  grid-area: content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+footer .footer-content ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  float: right;
+  list-style-type: none;
+  width: max-content;
+  gap: 3rem;
+}
+footer .footer-content ul li a {
+  font-size: 1.15rem;
+}
+footer .footer-content .socials {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+footer .footer-content .socials a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+footer .footer-content .socials a:hover {
+  color: var(--hover-color, #1f1f1f);
+}
+footer .copyright {
+  grid-area: copyright;
+  position: relative;
+  text-align: center;
+  padding: 1rem 0 0 0;
+}
+footer .copyright::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 5%;
+  width: 90%;
+  height: 2px;
+  background-color: #1f1f1f;
+  border-radius: 10px;
+}
+
+.scroll-to-top {
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #9f0004;
+  font-size: 1.5rem;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  transition: all 0.3s ease-in-out;
+  z-index: 10;
+}
+.scroll-to-top.visible {
+  visibility: visible;
+  opacity: 1;
+  cursor: pointer;
+}
+
+@keyframes carousel-loop {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+/* Pro mensi obrazovky */
+@media screen and (max-width: 1550px) {
+  main .container .sponsors .sponsors-carousel .sponsors-row {
+    gap: 3rem;
+  }
+  main .container .sponsors .sponsors-carousel .sponsors-row .sponsor-logo img {
+    height: 110px;
+    max-height: 110px;
+  }
+}
+@media screen and (max-width: 1250px) {
+  main .container .sponsors .sponsors-carousel .sponsors-row {
+    gap: 3rem;
+  }
+  main .container .sponsors .sponsors-carousel .sponsors-row .sponsor-logo img {
+    height: 85px;
+    max-height: 85px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  main .hero .title-small-screen {
+    display: block;
+  }
+  main .hero .title-large-screen {
+    display: none;
+  }
+  main .container {
+    padding-inline: 4rem;
+  }
+  main .container .friends .friend-cards {
+    gap: 1.5rem;
+  }
+  main .container .friends .friend-cards .friend-card .flag {
+    top: 1rem;
+    right: 1rem;
+  }
+  main .container .rivals .rival-cards {
+    gap: 1.5rem;
+  }
+  main .container .rivals .rival-cards .rival-card .flag {
+    top: 1rem;
+    right: 1rem;
+  }
+}
+@media screen and (max-width: 1048px) {
+  header .logo a span {
+    display: none;
+  }
+  main .hero .title-small-screen {
+    display: none;
+  }
+  main .hero iframe {
+    display: none;
+  }
+  footer .logo a {
+    max-width: 85%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  * {
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+  }
+  .scroll-to-top, nav, nav.active {
+    transition: all 0.3s ease-in-out !important;
+  }
+  .scroll-to-top.visible {
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  nav .nav-links li a::after {
+    display: none !important;
+  }
+  main .container .about .about-content .about-image {
+    display: none;
+  }
+  main .container .friends .friend-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  main .container .friends .friend-cards .friend-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  main .container .friends .friend-cards .friend-card .flag {
+    width: 2rem;
+    height: 2rem;
+  }
+  main .container .friends .friend-cards .friend-card .card-overlay {
+    position: static;
+    bottom: auto;
+    left: auto;
+    margin-top: 1rem;
+    transform: translateX(0);
+    text-align: center;
+    visibility: visible;
+    opacity: 1;
+    transition: none;
+  }
+  main .container .friends .friend-cards .friend-card .card-overlay h3 {
+    margin-top: 1rem;
+  }
+  main .container .friends .friend-cards .friend-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #e4e4e4;
+  }
+  main .container .friends .friend-cards .friend-card:hover .friend-img {
+    transform: none !important;
+    filter: none !important;
+  }
+  main .container .friends .friend-cards .friend-card:hover .card-overlay {
+    visibility: visible;
+    opacity: 1;
+    transform: none !important;
+    position: static;
+  }
+  main .container .rivals .rival-cards .rival-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    aspect-ratio: 1/1;
+  }
+  main .container .rivals .rival-cards .rival-card .flag {
+    width: 2rem;
+    height: 2rem;
+  }
+  main .container .rivals .rival-cards .rival-card .card-overlay {
+    position: static;
+    bottom: auto;
+    left: auto;
+    margin-top: 1rem;
+    transform: translateX(0);
+    text-align: center;
+    visibility: visible;
+    opacity: 1;
+    transition: none;
+  }
+  main .container .rivals .rival-cards .rival-card .card-overlay h3 {
+    margin-top: 1rem;
+  }
+  main .container .rivals .rival-cards .rival-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #e4e4e4;
+  }
+  main .container .rivals .rival-cards .rival-card:hover .rival-img {
+    transform: none !important;
+    filter: none !important;
+  }
+  main .container .rivals .rival-cards .rival-card:hover .card-overlay {
+    visibility: visible;
+    opacity: 1;
+    transform: none !important;
+    position: static;
+  }
+  main .container .sponsors::before, main .container .sponsors::after {
+    display: none;
+  }
+  main .container .sponsors .sponsors-carousel {
+    width: 100%;
+    animation: none !important;
+  }
+  main .container .sponsors .sponsors-carousel .sponsors-row:nth-child(2) {
+    display: none;
+  }
+  main .container .sponsors .sponsors-carousel .sponsors-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  main .container .sponsors .sponsors-carousel .sponsors-row .sponsor-logo {
+    flex: 0 0 25%;
+    max-width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+  main .container .sponsors .sponsors-carousel .sponsors-row .sponsor-logo img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+  }
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  footer .logo a {
+    max-width: 30%;
+  }
+  footer .footer-content .socials a:hover {
+    color: #1f1f1f;
+  }
+}
+@media screen and (max-width: 768px) {
+  header {
+    padding-inline: 2rem;
+    overflow: visible;
+  }
+  header .logo {
+    width: 50%;
+    max-width: 50%;
+  }
+  header .menu-toggle {
+    display: flex;
+  }
+  header nav {
+    position: absolute;
+    top: calc(50px + 2rem);
+    right: 0;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: #9f0004;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-left: 3px solid #1f1f1f;
+    border-right: 3px solid #1f1f1f;
+    border-bottom: 3px solid #1f1f1f;
+    width: 100%;
+    max-width: 100%;
+    padding-inline: 2rem;
+    gap: 1rem;
+    opacity: 0;
+    transition: all 0.3s ease-in-out !important;
+    pointer-events: none;
+    z-index: 9;
+  }
+  header nav.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  header nav .nav-links {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+  main .hero h1 {
+    display: none;
+  }
+  main .container {
+    padding: 4rem 2rem;
+  }
+  main .container .friends .friend-cards {
+    display: flex;
+    flex-direction: column;
+  }
+  main .container .friends .friend-cards .friend-card {
+    aspect-ratio: 3/2;
+  }
+  main .container .friends .friend-cards .friend-card .friend-img {
+    width: 70%;
+    max-width: 70%;
+    height: auto;
+    max-height: 70%;
+  }
+  main .container .rivals .rival-cards {
+    display: flex;
+    flex-direction: column;
+  }
+  main .container .rivals .rival-cards .rival-card {
+    aspect-ratio: 3/2;
+  }
+  main .container .rivals .rival-cards .rival-card .rival-img {
+    width: 70%;
+    max-width: 70%;
+    height: auto;
+    max-height: 70%;
+  }
+  main .container .sponsors .sponsors-carousel .sponsors-row .sponsor-logo {
+    flex: 0 0 30%;
+    max-width: 30%;
+  }
+  footer {
+    padding-inline: 2rem;
+  }
+  footer .logo a {
+    max-width: 40%;
+  }
+}
+@media screen and (max-width: 600px) {
+  main .container .friends .friend-cards .friend-card {
+    aspect-ratio: 4/3;
+  }
+  main .container .friends .friend-cards .friend-card .friend-img {
+    width: 60%;
+    max-width: 60%;
+    height: auto;
+    max-height: 60%;
+  }
+  main .container .friends .friend-cards .friend-card .card-overlay span {
+    display: none;
+  }
+  main .container .rivals .rival-cards .rival-card {
+    aspect-ratio: 4/3;
+  }
+  main .container .rivals .rival-cards .rival-card .rival-img {
+    width: 60%;
+    max-width: 60%;
+    height: auto;
+    max-height: 60%;
+  }
+  main .container .rivals .rival-cards .rival-card .card-overlay span {
+    display: none;
+  }
+  main .container .sponsors .sponsors-carousel .sponsors-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem 0;
+  }
+  main .container .sponsors .sponsors-carousel .sponsors-row .sponsor-logo {
+    flex: 0 0 auto;
+    width: 50%;
+    max-width: 50%;
+  }
+  main .container .sponsors .sponsors-carousel .sponsors-row .sponsor-logo:not(:first-child) {
+    margin-top: 2rem;
+  }
+  main .container .sponsors .sponsors-carousel .sponsors-row .sponsor-logo img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+  }
+  footer .logo a {
+    max-width: 50%;
+  }
+  footer .footer-content ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+@media screen and (max-width: 450px) {
+  main .container .sponsors .sponsors-carousel .sponsors-row .sponsor-logo {
+    width: 60%;
+    max-width: 60%;
+  }
+}

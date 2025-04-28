@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="./css/main.css">
+  <script defer src="./scripts/main.js"></script>
+
+  <!-- Favicon links -->
+  <link rel="icon" type="image/svg+xml" href="./favicons/favicon.svg">
+  <link rel="shortcut icon" href="./favicons/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-touch-icon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+
+  <!-- Font Awesome Icons -->
+  <script defer src="./assets/brands.js"></script>
+  <script defer src="./assets/solid.js"></script>
+  <script defer src="./assets/fontawesome.js"></script>
+
+
+  <meta name="theme-color" content="#ff3600" />
+
+   <!-- Meta tags for SEO -->
+  <meta name="description" content="Blesk McQueen - webová stránka pro fanoušky Bleska McQueena." />
+  <meta name="keywords" content="Blesk, McQueen, Cars, Disney, Pixar" />
+  <title>Blesk McQueen</title>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="https://github.com/simon-janata/itw-project2-portfolio" target="_blank" rel="noopener noreferrer">
+        <img src="./images/lightning-mcqueen-logo.webp" alt="Blesk McQueen Logo">
+        <span>Blesk McQueen</span>
+      </a>
+    </div>
+
+    <button type="button" class="menu-toggle" aria-label="Menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </label> -->
+
+    <nav>
+      <ul class="nav-links">
+        <li><a data-target="#about">O Bleskovi</a></li>
+        <li><a data-target="#friends">Přátelé</a></li>
+        <li><a data-target="#rivals">Rivalové</a></li>
+        <li><a data-target="#sponsors">Sponzoři</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1 class="title-small-screen">Rychlost!<br>Já jsem rychlost!</h1>
+      <h1 class="title-large-screen">Rychlý jako jaguár, silný jako medvěd.<br>Já jsem rychlost! Jsem Blesk McQueen.</h1>
+      
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/45dGKmN6jw7PgK6Dw2rEp2?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </section>
+    
+    <div class="container">
+      <section id="about" class="about">
+        <div class="section-title">
+          <span class="line"></span>
+          <h2>O Bleskovi</h2>
+          <span class="line"></span>
+        </div>
+        <div class="about-content">
+          <div class="about-image">
+            <img src="./images/about.webp" alt="Blesk McQueen">
+          </div>
+          <div class="about-info">
+            <p>
+              Blesk McQueen je legendární závodní vůz číslo 95, známý svou rychlostí, tvrdohlavostí i nezaměnitelným "Ka-chow!". Ačkoliv začínal jako sólista posedlý vítězstvím, jeho cesta ho dovedla až do srdce <strong>Kardanové Lhoty</strong>, kde našel skutečné přátele – a možná i sám sebe.
+            </p>
+
+            <p>
+              Jako několikanásobný šampion Piston Cupu patří k nejvýraznějším jménům závodní historie. Jeho sponzoři? Od notoricky známé Nerezky až po legendární Dinoco. A jeho mentor? Nikdo menší než slavný Doktor Hudson Hornet.
+            </p>
+
+            <p>
+              Kromě kariéry závodníka si prošel i ztrátami, nečekanými zvraty i návratem na trať jako mentor nové generace. Ale ať už je na startu, nebo v roli trenéra, jedno zůstává jisté – <em>Blesk nikdy neztratí jiskru</em>.
+            </p>
+
+            <h3>Slavné hlášky</h3>
+            <div class="quotes">
+              <blockquote>„Rychlost. Jsem rychlost.“</blockquote>
+              <blockquote>„Jsem rychlý jako blesk!“</blockquote>
+              <blockquote>„Kachow!“</blockquote>
+              <blockquote>„Vítězství je moje.“</blockquote>
+              <blockquote>„Jedeme dál, pořád plnou parou!“</blockquote>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="friends" class="friends">
+        <div class="section-title">
+          <span class="line"></span>
+          <h2>Přátelé</h2>
+          <span class="line"></span>
+        </div>
+        <div class="friend-cards">
+          <div class="friend-card">
+            <img class="flag" src="./images/us-flag-rounded.svg" alt="USA" loading="lazy">
+            <img class="friend-img" src="./images/mater.webp" alt="Burák" data-color="#8b4513" loading="lazy">
+            <div class="card-overlay">
+              <h3>Burák</h3>
+              <span>Odtahovka srdcem, komik duší</span>
+            </div>
+          </div>
+  
+          <div class="friend-card">
+            <img class="flag" src="./images/us-flag-rounded.svg" alt="USA" loading="lazy">
+            <img class="friend-img" src="./images/sally-carrera.webp" alt="Sally" data-color="#87ceeb" loading="lazy">
+            <div class="card-overlay">
+              <h3>Sally</h3>
+              <span>Motelová šéfka s vizí</span>
+            </div>
+          </div>
+  
+          <div class="friend-card">
+            <img class="flag" src="./images/us-flag-rounded.svg" alt="USA" loading="lazy">
+            <img class="friend-img" src="./images/doc-hudson.webp" alt="Doc Hudson" data-color="#4169e1" loading="lazy">
+            <div class="card-overlay">
+              <h3>Doc Hudson</h3>
+              <span>Legenda s volantem</span>
+            </div>
+          </div>
+  
+          <div class="friend-card">
+            <img class="flag" src="./images/it-flag-rounded.svg" alt="Itálie" loading="lazy">
+            <img class="friend-img" src="./images/luigi.webp" alt="Luigi" data-color="#ffd700" loading="lazy">
+            <div class="card-overlay">
+              <h3>Luigi</h3>
+              <span>Ferrari nad život</span>
+            </div>
+          </div>
+  
+          <div class="friend-card">
+            <img class="flag" src="./images/it-flag-rounded.svg" alt="Itálie" loading="lazy">
+            <img class="friend-img" src="./images/guido.webp" alt="Guido" data-color="#4682b4" loading="lazy">
+            <div class="card-overlay">
+              <h3>Guido</h3>
+              <span>Pneumatiky? Mžik!</span>
+            </div>
+          </div>
+  
+          <div class="friend-card">
+            <img class="flag" src="./images/us-flag-rounded.svg" alt="USA" loading="lazy">
+            <img class="friend-img" src="./images/mack.webp" alt="Mack" data-color="#ff4500" loading="lazy">
+            <div class="card-overlay">
+              <h3>Mack</h3>
+              <span>Kamion, co nikdy nespí</span>
+            </div>
+          </div>
+  
+          <div class="friend-card">
+            <img class="flag" src="./images/us-flag-rounded.svg" alt="USA" loading="lazy">
+            <img class="friend-img" src="./images/fillmore.webp" alt="Fillmore" data-color="#9acd32" loading="lazy">
+            <div class="card-overlay">
+              <h3>Fillmore</h3>
+              <span>Bio palivo a mír, kámo</span>
+            </div>
+          </div>
+  
+          <div class="friend-card">
+            <img class="flag" src="./images/us-flag-rounded.svg" alt="USA" loading="lazy">
+            <img class="friend-img" src="./images/flo.webp" alt="Flo" data-color="#40e0d0" loading="lazy">
+            <div class="card-overlay">
+              <h3>Flo</h3>
+              <span>Tankuje styl a úsměv</span>
+            </div>
+          </div>
+          
+          <div class="friend-card">
+            <img class="flag" src="./images/us-flag-rounded.svg" alt="USA" loading="lazy">
+            <img class="friend-img" src="./images/sarge.webp" alt="Sarge" data-color="#556b2f" loading="lazy">
+            <div class="card-overlay">
+              <h3>Sarge</h3>
+              <span>Rozkaz: pořádek!</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="rivals" class="rivals">
+        <div class="section-title">
+          <span class="line"></span>
+          <h2>Rivalové</h2>
+          <span class="line"></span>
+        </div>
+        <div class="rival-cards">
+          <div class="rival-card">
+            <img class="flag" src="./images/us-flag-rounded.svg" alt="USA" loading="lazy">
+            <img class="rival-img" src="./images/the-king.webp" alt="The King" data-color="#00bfff" loading="lazy">
+            <div class="card-overlay">
+              <h3>The King</h3>
+              <span>Král asfaltu s duší gentlemana</span>
+            </div>
+          </div>
+
+          <div class="rival-card">
+            <img class="flag" src="./images/us-flag-rounded.svg" alt="USA" loading="lazy">
+            <img class="rival-img" src="./images/chick-hicks.webp" alt="Chick Hicks" data-color="#228b22" loading="lazy">
+            <div class="card-overlay">
+              <h3>Chick Hicks</h3>
+              <span>Vítěz? Možná. Sympaťák? Ani náhodou</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="sponsors" class="sponsors">
+        <div class="section-title">
+          <span class="line"></span>
+          <h2>Sponzoři</h2>
+          <span class="line"></span>
+        </div>
+        <div class="sponsors-carousel">
+          <div class="sponsors-row">
+            <div class="sponsor-logo"><img src="./images/disney-and-pixar-cars-logo.webp" alt="Disney a Pixar Cars" loading="lazy"></div>
+            <div class="sponsor-logo"><img src="./images/rusteze-logo.webp" alt="Rusteze" loading="lazy"></div>
+            <div class="sponsor-logo"><img src="./images/dinoco-logo.png" alt="Dinoco" loading="lazy"></div>
+            <div class="sponsor-logo"><img src="./images/lightyear.webp" alt="Lightyear" loading="lazy"></div>
+            <div class="sponsor-logo"><img src="./images/gasprin.webp" alt="Gasprin" loading="lazy"></div>
+          </div>
+
+          <!-- Duplikace pro plynule opakovani -->
+          <div class="sponsors-row">
+            <div class="sponsor-logo"><img src="./images/disney-and-pixar-cars-logo.webp" alt="Disney a Pixar Cars" loading="lazy"></div>
+            <div class="sponsor-logo"><img src="./images/rusteze-logo.webp" alt="Rusteze" loading="lazy"></div>
+            <div class="sponsor-logo"><img src="./images/dinoco-logo.png" alt="Dinoco" loading="lazy"></div>
+            <div class="sponsor-logo"><img src="./images/lightyear.webp" alt="Lightyear" loading="lazy"></div>
+            <div class="sponsor-logo"><img src="./images/gasprin.webp" alt="Gasprin" loading="lazy"></div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="logo">
+      <a href="https://github.com/simon-janata/itw-project2-portfolio" target="_blank" rel="noopener noreferrer">
+        <img src="./images/lightning-mcqueen-logo.webp" alt="Blesk McQueen Logo" loading="lazy">
+      </a>
+    </div>
+    <div class="footer-content">
+      <nav aria-label="Navigace v patičce">
+        <ul>
+          <li><a data-target="#about">O Bleskovi</a></li>
+          <li><a data-target="#friends">Přátelé</a></li>
+          <li><a data-target="#rivals">Rivalové</a></li>
+          <li><a data-target="#sponsors">Sponzoři</a></li>
+        </ul>
+      </nav>
+      <div class="socials" aria-label="Sociální sítě">
+        <a href="https://www.facebook.com/Pixar/?locale=cs_CZ" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style="--hover-color: #1877f2;">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/pixar/?hl=cs" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="--hover-color: #e1306c;">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://x.com/pixar?lang=cs" target="_blank" rel="noopener noreferrer" aria-label="Twitter" style="--hover-color: #000000;">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+        <a href="https://www.youtube.com/@pixar" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style="--hover-color: #ff0000;">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>Tento web byl vytvořen jako školní projekt pro předmět ITW na FIT VUT. Veškeré postavy a značky jsou © Disney/Pixar. Design a kód: Šimon Janata.</p>
+    </div>
+  </footer>
+
+  <button type="button" id="scrollToTopBtn" class="scroll-to-top" aria-label="Posunout nahoru">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+</body>
+</html>
