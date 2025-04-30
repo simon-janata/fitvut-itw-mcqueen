@@ -42,20 +42,7 @@
       </a>
     </div>
 
-    <button type="button" class="menu-toggle" aria-label="Menu">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </button>
-
-    <!-- <input type="checkbox" id="menu-toggle" class="menu-toggle">
-    <label for="menu-toggle" class="menu-icon">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </label> -->
-
-    <nav>
+    <nav class="desktop-nav">
       <ul class="nav-links">
         <li><a data-target="#about">O Bleskovi</a></li>
         <li><a data-target="#friends">Přátelé</a></li>
@@ -63,7 +50,23 @@
         <li><a data-target="#sponsors">Sponzoři</a></li>
       </ul>
     </nav>
+
+    <button type="button" class="menu-toggle" aria-label="Menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    </nav>
   </header>
+
+  <nav class="mobile-nav">
+    <ul class="nav-links">
+      <li><a data-target="#about">O Bleskovi</a></li>
+      <li><a data-target="#friends">Přátelé</a></li>
+      <li><a data-target="#rivals">Rivalové</a></li>
+      <li><a data-target="#sponsors">Sponzoři</a></li>
+    </ul>
+  </nav>
 
   <main>
     <section class="hero">
@@ -82,7 +85,7 @@
         </div>
         <div class="about-content">
           <div class="about-image">
-            <img src="./images/about.webp" alt="Blesk McQueen">
+            <img src="./images/about.webp" alt="Blesk McQueen" loading="lazy">
           </div>
           <div class="about-info">
             <p>

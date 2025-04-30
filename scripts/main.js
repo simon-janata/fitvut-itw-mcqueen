@@ -1,5 +1,5 @@
 const menuToggleBtn = document.querySelector(".menu-toggle");
-const navbar = document.querySelector("nav");
+const mobileNav = document.querySelector(".mobile-nav");
 const navbarLinks = document.querySelectorAll("nav a");
 const friendsImages = document.querySelectorAll(".friend-img");
 const rivalsImages = document.querySelectorAll(".rival-img");
@@ -7,24 +7,42 @@ const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
 
 
-menuToggleBtn.addEventListener("click", () => {
-  navbar.classList.toggle("active");
-  menuToggleBtn.classList.toggle("active");
+// Na konec souboru main.js
+window.addEventListener('resize', function() {
+  const mobileNav = document.querySelector('.mobile-nav');
+  const menuToggleBtn = document.querySelector('.menu-toggle');
+  
+  // Pokud jsme na desktopu a mobilní menu je aktivní, deaktivujeme ho
+  if (window.innerWidth > 768 && mobileNav.classList.contains('active')) {
+    mobileNav.classList.remove('active');
+    menuToggleBtn.classList.remove('open');
+  }
+});
 
-    if (navbar.classList.contains("active")) {
+
+
+
+
+
+
+menuToggleBtn.addEventListener("click", () => {
+  mobileNav.classList.toggle("active");
+  menuToggleBtn.classList.toggle("open");
+
+    if (mobileNav.classList.contains("active")) {
     // document.body.style.overflow = "hidden"; // Disable scrolling
   
     let viewportHeight = window.innerHeight;
-    let navbarHeight = navbar.offsetHeight;
+    let navbarHeight = mobileNav.offsetHeight;
     
     // Přidat event listener pro kliknutí kdekoliv na stránce
     const closeNavOnClickOutside = (event) => {
       // Zkontroluje, zda kliknutí bylo mimo navbar a mimo toggle tlačítko
-      if (!navbar.contains(event.target) && 
+      if (!mobileNav.contains(event.target) && 
           !menuToggleBtn.contains(event.target)) {
         // Zavřít navbar
-        navbar.classList.remove("active");
-        menuToggleBtn.classList.remove("active");
+        mobileNav.classList.remove("active");
+        menuToggleBtn.classList.remove("open");
         
         // Odstranit tento event listener po zavření navbaru
         document.removeEventListener('click', closeNavOnClickOutside);
@@ -52,8 +70,8 @@ navbarLinks.forEach(link => {
       const headerHeight = document.querySelector("header").offsetHeight;
       const targetPosition = targetSection.offsetTop - headerHeight - 50;
 
-      navbar.classList.remove("active");
-      menuToggleBtn.classList.remove("active");
+      mobileNav.classList.remove("active");
+      menuToggleBtn.classList.remove("open");
 
       window.scrollTo({
         top: targetPosition,

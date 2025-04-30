@@ -77,10 +77,10 @@ h3 {
 
 a {
   cursor: pointer;
+  text-decoration: none;
 }
 
 header {
-  position: relative;
   position: fixed;
   top: 0;
   left: 0;
@@ -96,7 +96,6 @@ header {
   z-index: 10;
 }
 header a {
-  text-decoration: none;
   color: white;
 }
 header .logo {
@@ -113,6 +112,7 @@ header .logo a {
   max-width: 100%;
   height: 100%;
   max-height: 100%;
+  gap: 1rem;
 }
 header .logo a img {
   height: 100%;
@@ -124,32 +124,13 @@ header .logo a span {
   font-size: 1.75rem;
   font-weight: bold;
   color: white;
-  margin-left: 1rem;
 }
-header .menu-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: fit-content;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-header .menu-toggle .bar {
-  width: 100%;
-  height: 3px;
-  background-color: white;
-  border-radius: 2px;
-  transition: all 0.3s ease-in-out;
-}
-header nav {
+header .desktop-nav {
+  display: block;
   width: 65%;
   max-width: 65%;
 }
-header nav .nav-links {
+header .desktop-nav .nav-links {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -158,11 +139,11 @@ header nav .nav-links {
   width: max-content;
   gap: 3rem;
 }
-header nav .nav-links li a {
+header .desktop-nav .nav-links li a {
   position: relative;
   font-size: 1.15rem;
 }
-header nav .nav-links li a::after {
+header .desktop-nav .nav-links li a::after {
   content: "";
   position: absolute;
   bottom: -5px;
@@ -173,9 +154,87 @@ header nav .nav-links li a::after {
   background-color: goldenrod;
   transition: all 0.3s ease-in-out;
 }
-header nav .nav-links li a:hover::after {
+header .desktop-nav .nav-links li a:hover::after {
   width: 100%;
   left: 0;
+}
+header .menu-toggle {
+  position: relative;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 19px;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+header .menu-toggle .bar {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+header .menu-toggle .bar:nth-child(1) {
+  top: 0;
+}
+header .menu-toggle .bar:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+header .menu-toggle .bar:nth-child(3) {
+  bottom: 0;
+}
+header .menu-toggle.open .bar:nth-child(1) {
+  transform: rotate(45deg);
+  top: 50%;
+}
+header .menu-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+header .menu-toggle.open .bar:nth-child(3) {
+  transform: rotate(-45deg);
+  bottom: auto;
+  top: 50%;
+}
+
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: calc(50px + 2rem);
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  background-color: #9f0004;
+  border-bottom: 3px solid #1f1f1f;
+  padding: 1rem 2rem;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-150%);
+  transition: all 0.3s ease-in-out;
+  z-index: 9;
+}
+.mobile-nav.active {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.mobile-nav .nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+  list-style-type: none;
+}
+.mobile-nav .nav-links li a {
+  font-size: 1.15rem;
+  color: white;
 }
 
 main {
@@ -558,7 +617,6 @@ footer .footer-content .socials {
 }
 footer .footer-content .socials a {
   font-size: 1.5rem;
-  text-decoration: none;
   transition: all 0.3s ease-in-out;
 }
 footer .footer-content .socials a:hover {
@@ -670,20 +728,8 @@ footer .copyright::before {
   }
 }
 @media screen and (max-width: 1024px) {
-  * {
-    transition: none !important;
-    transform: none !important;
-    animation: none !important;
-  }
-  .scroll-to-top, nav, nav.active {
-    transition: all 0.3s ease-in-out !important;
-  }
-  .scroll-to-top.visible {
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-  nav .nav-links li a::after {
-    display: none !important;
+  header .desktop-nav .nav-links li a::after {
+    display: none;
   }
   main .container .about .about-content .about-image {
     display: none;
@@ -696,10 +742,14 @@ footer .copyright::before {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+    transition: none;
   }
   main .container .friends .friend-cards .friend-card .flag {
     width: 2rem;
     height: 2rem;
+  }
+  main .container .friends .friend-cards .friend-card .friend-img {
+    transition: none;
   }
   main .container .friends .friend-cards .friend-card .card-overlay {
     position: static;
@@ -720,13 +770,13 @@ footer .copyright::before {
     background-color: #e4e4e4;
   }
   main .container .friends .friend-cards .friend-card:hover .friend-img {
-    transform: none !important;
-    filter: none !important;
+    transform: none;
+    filter: none;
   }
   main .container .friends .friend-cards .friend-card:hover .card-overlay {
     visibility: visible;
     opacity: 1;
-    transform: none !important;
+    transform: none;
     position: static;
   }
   main .container .rivals .rival-cards .rival-card {
@@ -735,10 +785,14 @@ footer .copyright::before {
     justify-content: flex-end;
     align-items: center;
     aspect-ratio: 1/1;
+    transition: none;
   }
   main .container .rivals .rival-cards .rival-card .flag {
     width: 2rem;
     height: 2rem;
+  }
+  main .container .rivals .rival-cards .rival-card .rival-img {
+    transition: none;
   }
   main .container .rivals .rival-cards .rival-card .card-overlay {
     position: static;
@@ -759,13 +813,13 @@ footer .copyright::before {
     background-color: #e4e4e4;
   }
   main .container .rivals .rival-cards .rival-card:hover .rival-img {
-    transform: none !important;
-    filter: none !important;
+    transform: none;
+    filter: none;
   }
   main .container .rivals .rival-cards .rival-card:hover .card-overlay {
     visibility: visible;
     opacity: 1;
-    transform: none !important;
+    transform: none;
     position: static;
   }
   main .container .sponsors::before, main .container .sponsors::after {
@@ -773,7 +827,7 @@ footer .copyright::before {
   }
   main .container .sponsors .sponsors-carousel {
     width: 100%;
-    animation: none !important;
+    animation: none;
   }
   main .container .sponsors .sponsors-carousel .sponsors-row:nth-child(2) {
     display: none;
@@ -798,6 +852,7 @@ footer .copyright::before {
     max-width: 100%;
     height: auto;
     max-height: 100%;
+    transition: none;
   }
   footer {
     display: flex;
@@ -806,6 +861,9 @@ footer .copyright::before {
   }
   footer .logo a {
     max-width: 30%;
+  }
+  footer .footer-content .socials a {
+    transition: none;
   }
   footer .footer-content .socials a:hover {
     color: #1f1f1f;
@@ -820,39 +878,14 @@ footer .copyright::before {
     width: 50%;
     max-width: 50%;
   }
+  header .desktop-nav {
+    display: none;
+  }
   header .menu-toggle {
     display: flex;
   }
-  header nav {
-    position: absolute;
-    top: calc(50px + 2rem);
-    right: 0;
-    flex-direction: column;
-    align-items: flex-end;
-    background-color: #9f0004;
-    border-bottom-right-radius: 1rem;
-    border-bottom-left-radius: 1rem;
-    border-left: 3px solid #1f1f1f;
-    border-right: 3px solid #1f1f1f;
-    border-bottom: 3px solid #1f1f1f;
-    width: 100%;
-    max-width: 100%;
-    padding-inline: 2rem;
-    gap: 1rem;
-    opacity: 0;
-    transition: all 0.3s ease-in-out !important;
-    pointer-events: none;
-    z-index: 9;
-  }
-  header nav.active {
-    opacity: 1;
-    pointer-events: auto;
-  }
-  header nav .nav-links {
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 1rem;
-    padding: 1rem 0;
+  .mobile-nav {
+    display: block;
   }
   main .hero h1 {
     display: none;
@@ -950,6 +983,9 @@ footer .copyright::before {
   }
 }
 @media screen and (max-width: 450px) {
+  main .container section .section-title .line {
+    flex: 0 1 15%;
+  }
   main .container .sponsors .sponsors-carousel .sponsors-row .sponsor-logo {
     width: 60%;
     max-width: 60%;
