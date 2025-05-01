@@ -1,3 +1,4 @@
+const header = document.querySelector("header");
 const menuToggleBtn = document.querySelector(".menu-toggle");
 const mobileNav = document.querySelector(".mobile-nav");
 const navbarLinks = document.querySelectorAll("nav a");
@@ -5,6 +6,9 @@ const friendsImages = document.querySelectorAll(".friend-img");
 const rivalsImages = document.querySelectorAll(".rival-img");
 const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
+
+// Set initial border color for the header
+header.style.borderBottom = "3px solid #1f1f1f";
 
 
 // Toggle mobile navigation menu
@@ -17,15 +21,22 @@ menuToggleBtn.addEventListener("click", () => {
   menuToggleBtn.setAttribute("aria-expanded", isExpanded);
 
   if (mobileNav.classList.contains("active")) {
+    // Set the header border color to red when the mobile menu is open
+    header.style.borderBottomColor = "#9f0004";
 
     // Add event listener for clicks outside the navbar to close it
     const closeNavOnClickOutside = (event) => {
       // Check if the click was outside the mobileNav and menuToggleBtn
-      if (!mobileNav.contains(event.target) && !menuToggleBtn.contains(event.target)) {
+      if (!header.contains(event.target) && !mobileNav.contains(event.target) && !menuToggleBtn.contains(event.target)) {
         // close the mobile navigation menu
         mobileNav.classList.remove("active");
         menuToggleBtn.classList.remove("open");
 
+        // Set the header border color back to the original color after a short delay
+        setTimeout(() => {
+          header.style.borderBottomColor = "#1f1f1f";
+        }, 300);
+        
         // Remove the event listener to prevent memory leaks
         document.removeEventListener("click", closeNavOnClickOutside);
       }
@@ -35,6 +46,11 @@ menuToggleBtn.addEventListener("click", () => {
     setTimeout(() => {
       document.addEventListener("click", closeNavOnClickOutside);
     }, 10);
+  } else {
+    // Set the header border color back to the original color after a short delay
+    setTimeout(() => {
+      header.style.borderBottomColor = "#1f1f1f";
+    }, 300);
   }
 });
 
@@ -54,6 +70,11 @@ navbarLinks.forEach(link => {
 
       mobileNav.classList.remove("active");
       menuToggleBtn.classList.remove("open");
+
+      // Set the header border color back to the original color after a short delay
+      setTimeout(() => {
+        header.style.borderBottomColor = "#1f1f1f";
+      }, 300);
 
       window.scrollTo({
         top: targetPosition,

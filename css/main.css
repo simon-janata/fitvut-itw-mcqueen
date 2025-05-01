@@ -94,7 +94,6 @@ header {
   width: 100%;
   height: calc(50px + 2rem);
   padding: 1rem 4rem;
-  border-bottom: 3px solid #1f1f1f;
   background-color: #9f0004;
   z-index: 10;
 }
@@ -216,16 +215,12 @@ header .menu-toggle.open .bar:nth-child(3) {
   background-color: #9f0004;
   border-bottom: 3px solid #1f1f1f;
   padding: 1rem 2rem;
-  visibility: hidden;
-  opacity: 0;
   pointer-events: none;
   transform: translateY(-100%);
   transition: all 0.3s ease-in-out;
   z-index: 9;
 }
 .mobile-nav.active {
-  visibility: visible;
-  opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
 }
@@ -239,10 +234,6 @@ header .menu-toggle.open .bar:nth-child(3) {
 .mobile-nav .nav-links li a {
   font-size: 1.15rem;
   color: #f5f5f5;
-}
-
-body:has(.mobile-nav.active) header {
-  border-bottom-color: #9f0004;
 }
 
 main {

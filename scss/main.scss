@@ -92,7 +92,6 @@ header {
   width: 100%;
   height: calc(50px + 2rem);
   padding: 1rem 4rem;
-  border-bottom: 3px solid $dark-gray;
   background-color: $lightning-mcqueen-red;
   z-index: 10;
 
@@ -230,16 +229,12 @@ header {
   background-color: $lightning-mcqueen-red;
   border-bottom: 3px solid $dark-gray;
   padding: 1rem 2rem;
-  visibility: hidden;
-  opacity: 0;
   pointer-events: none;
   transform: translateY(-100%);
   transition: all $animation-duration ease-in-out;
   z-index: 9;
 
   &.active {
-    visibility: visible;
-    opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
   }
@@ -256,10 +251,6 @@ header {
       color: $text-light;
     }
   }
-}
-
-body:has(.mobile-nav.active) header {
-  border-bottom-color: $lightning-mcqueen-red;
 }
 
 main {
