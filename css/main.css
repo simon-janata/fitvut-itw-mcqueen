@@ -254,7 +254,7 @@ main .hero {
   width: 100%;
   aspect-ratio: 3840/2160;
   padding-inline: 6rem;
-  background-image: url("../images/bg-header.webp");
+  background-image: linear-gradient(to top right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 30%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0) 100%), url("../images/bg-header.webp");
   background-size: 100% auto;
   background-color: #e4e4e4;
   background-position: center;
@@ -263,6 +263,7 @@ main .hero h1 {
   position: absolute;
   top: 10%;
   color: #1f1f1f;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 main .hero .title-small-screen {
   display: none;
@@ -274,7 +275,7 @@ main .hero iframe {
   position: absolute;
   bottom: 5%;
   max-width: 35%;
-  max-height: 200px;
+  max-height: 25%;
   border-radius: 12px;
 }
 main .container {
@@ -675,6 +676,12 @@ footer .copyright::before {
 }
 /* Pro mensi obrazovky */
 @media screen and (max-width: 1550px) {
+  main .hero .title-small-screen {
+    display: block;
+  }
+  main .hero .title-large-screen {
+    display: none;
+  }
   main .container .sponsors .sponsors-carousel .sponsors-row {
     gap: 3rem;
   }
@@ -693,12 +700,6 @@ footer .copyright::before {
   }
 }
 @media screen and (max-width: 1200px) {
-  main .hero .title-small-screen {
-    display: block;
-  }
-  main .hero .title-large-screen {
-    display: none;
-  }
   main .container {
     padding-inline: 4rem;
   }

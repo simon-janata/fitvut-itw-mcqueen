@@ -271,7 +271,14 @@ main {
     width: 100%;
     aspect-ratio: 3840 / 2160;
     padding-inline: 6rem;
-    background-image: url("../images/bg-header.webp");
+    background-image: linear-gradient(
+        to top right,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(0, 0, 0, 0.5) 30%,
+        rgba(0, 0, 0, 0.2) 60%,
+        rgba(0, 0, 0, 0) 100%
+      ),
+      url("../images/bg-header.webp");
     background-size: 100% auto;
     background-color: #e4e4e4;
     background-position: center;
@@ -280,6 +287,7 @@ main {
       position: absolute;
       top: 10%;
       color: $dark-gray;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
 
     .title-small-screen {
@@ -294,7 +302,7 @@ main {
       position: absolute;
       bottom: 5%;
       max-width: 35%;
-      max-height: 200px;
+      max-height: 25%;
       border-radius: 12px;
     }
   }
@@ -768,6 +776,16 @@ footer {
 /* Pro mensi obrazovky */
 @media screen and (max-width: 1550px) {
   main {
+    .hero {
+      .title-small-screen {
+        display: block;
+      }
+
+      .title-large-screen {
+        display: none;
+      }
+    }
+
     .container {
       .sponsors {
         .sponsors-carousel {
@@ -806,16 +824,6 @@ footer {
 
 @media screen and (max-width: 1200px) {
   main {
-    .hero {
-      .title-small-screen {
-        display: block;
-      }
-
-      .title-large-screen {
-        display: none;
-      }
-    }
-
     .container {
       padding-inline: 4rem;
 
