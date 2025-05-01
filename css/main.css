@@ -194,14 +194,14 @@ header .menu-toggle .bar:nth-child(3) {
 }
 header .menu-toggle.open .bar:nth-child(1) {
   transform: rotate(45deg);
-  top: 50%;
+  top: calc(50% - 1.5px);
 }
 header .menu-toggle.open .bar:nth-child(2) {
   opacity: 0;
 }
 header .menu-toggle.open .bar:nth-child(3) {
   transform: rotate(-45deg);
-  top: 50%;
+  top: calc(50% - 1.5px);
 }
 
 /* Mobile navigation menu */
