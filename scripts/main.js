@@ -7,58 +7,40 @@ const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
 
 
-// Na konec souboru main.js
-window.addEventListener('resize', function() {
-  const mobileNav = document.querySelector('.mobile-nav');
-  const menuToggleBtn = document.querySelector('.menu-toggle');
-  
-  // Pokud jsme na desktopu a mobilní menu je aktivní, deaktivujeme ho
-  if (window.innerWidth > 768 && mobileNav.classList.contains('active')) {
-    mobileNav.classList.remove('active');
-    menuToggleBtn.classList.remove('open');
-  }
-});
-
-
-
-
-
-
-
+// Toggle mobile navigation menu
 menuToggleBtn.addEventListener("click", () => {
   mobileNav.classList.toggle("active");
   menuToggleBtn.classList.toggle("open");
 
-    if (mobileNav.classList.contains("active")) {
-    // document.body.style.overflow = "hidden"; // Disable scrolling
-  
-    let viewportHeight = window.innerHeight;
-    let navbarHeight = mobileNav.offsetHeight;
-    
-    // Přidat event listener pro kliknutí kdekoliv na stránce
+  // Edit aria-expanded attribute for accessibility
+  const isExpanded = mobileNav.classList.contains("active");
+  menuToggleBtn.setAttribute("aria-expanded", isExpanded);
+
+  if (mobileNav.classList.contains("active")) {
+
+    // Add event listener for clicks outside the navbar to close it
     const closeNavOnClickOutside = (event) => {
-      // Zkontroluje, zda kliknutí bylo mimo navbar a mimo toggle tlačítko
-      if (!mobileNav.contains(event.target) && 
-          !menuToggleBtn.contains(event.target)) {
-        // Zavřít navbar
+      // Check if the click was outside the mobileNav and menuToggleBtn
+      if (!mobileNav.contains(event.target) && !menuToggleBtn.contains(event.target)) {
+        // close the mobile navigation menu
         mobileNav.classList.remove("active");
         menuToggleBtn.classList.remove("open");
-        
-        // Odstranit tento event listener po zavření navbaru
-        document.removeEventListener('click', closeNavOnClickOutside);
+
+        // Remove the event listener to prevent memory leaks
+        document.removeEventListener("click", closeNavOnClickOutside);
       }
     };
-    
-    // Použít setTimeout, aby se event nezaregistroval hned (předejdeme zavření menu hned po otevření)
+
+    // Add the event listener after a short delay to ensure the menu is open before checking for clicks outside
     setTimeout(() => {
-      document.addEventListener('click', closeNavOnClickOutside);
+      document.addEventListener("click", closeNavOnClickOutside);
     }, 10);
   }
 });
 
 
-
-
+// Smooth scroll for navbar links
+// I used JavaScript instead of the classic HTML anchor link because the header is fixed and the links wouldn't move to the right position
 navbarLinks.forEach(link => {
   link.addEventListener("click", function (e) {
     e.preventDefault();
@@ -82,6 +64,7 @@ navbarLinks.forEach(link => {
 });
 
 
+// Set color for friends and rivals images based on data-color attribute
 friendsImages.forEach(img => {
   const color = img.getAttribute("data-color");
   img.style.color = color;
@@ -93,6 +76,7 @@ rivalsImages.forEach(img => {
 });
 
 
+// Scroll to top button
 window.addEventListener("scroll", () => {
   if (window.scrollY > 500) {
     scrollToTopBtn.classList.add("visible");
@@ -107,3 +91,12 @@ scrollToTopBtn.addEventListener("click", () => {
     behavior: "smooth"
   });
 })
+
+
+// Close mobile menu on window resize if the screen is wider than 768px
+window.addEventListener("resize", function () {
+  if (window.innerWidth > 768 && mobileNav.classList.contains("active")) {
+    mobileNav.classList.remove("active");
+    menuToggleBtn.classList.remove("open");
+  }
+});
