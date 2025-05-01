@@ -8,22 +8,24 @@
   font-style: normal;
 }
 
+/* Responsive font size based on viewport width */
 html {
   width: 100%;
   max-width: 100%;
-  font-size: 16px;
+  font-size: 16px; /* Base font size */
 }
 @media screen and (min-width: 1920px) {
   html {
-    font-size: 17px;
+    font-size: 17px; /* Larger font for larger screens */
   }
 }
 @media screen and (min-width: 2560px) {
   html {
-    font-size: 20px;
+    font-size: 20px; /* Even larger font for very large screens */
   }
 }
 
+/* Basic typography styles */
 h1, h2, h3, p, a, li, span {
   color: #1f1f1f;
 }
@@ -80,6 +82,7 @@ a {
   text-decoration: none;
 }
 
+/* Rules for fixed header navigation */
 header {
   position: fixed;
   top: 0;
@@ -202,6 +205,7 @@ header .menu-toggle.open .bar:nth-child(3) {
   top: 50%;
 }
 
+/* Mobile navigation menu */
 .mobile-nav {
   display: none;
   position: fixed;
@@ -555,6 +559,8 @@ main .container .sponsors .sponsors-carousel .sponsors-row .sponsor-logo img:hov
   transform: scale(1.1);
 }
 
+/* Footer styles */
+/* Organized in a grid layout with logo, content, and copyright sections */
 footer {
   position: relative;
   display: grid;
@@ -644,6 +650,8 @@ footer .copyright::before {
   border-radius: 10px;
 }
 
+/* Scroll to top button styles */
+/* This button appears when the user scrolls down the page */
 .scroll-to-top {
   visibility: hidden;
   opacity: 0;
@@ -666,6 +674,8 @@ footer .copyright::before {
   cursor: pointer;
 }
 
+/* Keyframes for the carousel animation */
+/* This animation creates a looping effect for the sponsors carousel */
 @keyframes carousel-loop {
   from {
     transform: translateX(0);
@@ -674,7 +684,7 @@ footer .copyright::before {
     transform: translateX(-50%);
   }
 }
-/* Pro mensi obrazovky */
+/* Media queries for responsive design */
 @media screen and (max-width: 1550px) {
   main .hero .title-small-screen {
     display: block;
