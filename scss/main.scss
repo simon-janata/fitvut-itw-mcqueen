@@ -1049,6 +1049,10 @@ footer {
                 height: auto;
                 max-height: 100%;
                 transition: none;
+
+                &:hover {
+                  transform: none;
+                }
               }
             }
           }
@@ -1226,8 +1230,8 @@ footer {
 
             .sponsor-logo {
               flex: 0 0 auto;
-              width: 50%;
-              max-width: 50%;
+              width: 35vw;
+              max-width: 35vw;
 
               &:not(:first-child) {
                 margin-top: 2rem;
@@ -1255,7 +1259,7 @@ footer {
     .footer-content {
       ul {
         flex-direction: column;
-        gap: 1rem;
+        gap: 1.5rem;
       }
     }
   }
@@ -1276,8 +1280,8 @@ footer {
         .sponsors-carousel {
           .sponsors-row {
             .sponsor-logo {
-              width: 60%;
-              max-width: 60%;
+              width: 40vw;
+              max-width: 40vw;
             }
           }
         }

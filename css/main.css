@@ -859,6 +859,9 @@ footer .copyright::before {
     max-height: 100%;
     transition: none;
   }
+  main .container .sponsors .sponsors-carousel .sponsors-row .sponsor-logo img:hover {
+    transform: none;
+  }
   footer {
     display: flex;
     flex-direction: column;
@@ -968,8 +971,8 @@ footer .copyright::before {
   }
   main .container .sponsors .sponsors-carousel .sponsors-row .sponsor-logo {
     flex: 0 0 auto;
-    width: 50%;
-    max-width: 50%;
+    width: 35vw;
+    max-width: 35vw;
   }
   main .container .sponsors .sponsors-carousel .sponsors-row .sponsor-logo:not(:first-child) {
     margin-top: 2rem;
@@ -984,7 +987,7 @@ footer .copyright::before {
   }
   footer .footer-content ul {
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
   }
 }
 @media screen and (max-width: 450px) {
@@ -992,7 +995,7 @@ footer .copyright::before {
     flex: 0 1 15%;
   }
   main .container .sponsors .sponsors-carousel .sponsors-row .sponsor-logo {
-    width: 60%;
-    max-width: 60%;
+    width: 40vw;
+    max-width: 40vw;
   }
 }
