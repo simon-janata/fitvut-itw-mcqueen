@@ -172,9 +172,9 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 30px;
-    height: 19px;
-    gap: 5px;
+    width: 32px;
+    height: 24px;
+    gap: 7px;
     background: none;
     border: none;
     cursor: pointer;
@@ -185,6 +185,7 @@ header {
       height: 3px;
       background-color: $text-light;
       border-radius: 2px;
+      transform-origin: center center;
       transition: all $animation-duration ease-in-out;
 
       &:nth-child(1) {
@@ -209,7 +210,6 @@ header {
       }
       .bar:nth-child(3) {
         transform: rotate(-45deg);
-        bottom: auto;
         top: 50%;
       }
     }
@@ -229,7 +229,7 @@ header {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
-  transform: translateY(-150%);
+  transform: translateY(-100%);
   transition: all $animation-duration ease-in-out;
   z-index: 9;
 
@@ -244,7 +244,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 1rem;
+    gap: 1.5rem;
     list-style-type: none;
 
     li a {
@@ -252,6 +252,10 @@ header {
       color: $text-light;
     }
   }
+}
+
+body:has(.mobile-nav.active) header {
+  border-bottom-color: $lightning-mcqueen-red;
 }
 
 main {
