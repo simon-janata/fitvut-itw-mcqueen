@@ -6,9 +6,12 @@ const friendsImages = document.querySelectorAll(".friend-img");
 const rivalsImages = document.querySelectorAll(".rival-img");
 const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
+const DARK_GRAY = "#1f1f1f";
+const MCQUEEN_RED = "#9f0004";
+const ANIMATION_DURATION = 300;
 
 // Set initial border color for the header
-header.style.borderBottom = "3px solid #1f1f1f";
+header.style.borderBottom = `3px solid ${DARK_GRAY}`;
 
 
 // Toggle mobile navigation menu
@@ -22,7 +25,7 @@ menuToggleBtn.addEventListener("click", () => {
 
   if (mobileNav.classList.contains("active")) {
     // Set the header border color to red when the mobile menu is open
-    header.style.borderBottomColor = "#9f0004";
+    header.style.borderBottomColor = `${MCQUEEN_RED}`;
 
     // Add event listener for clicks outside the navbar to close it
     const closeNavOnClickOutside = (event) => {
@@ -34,8 +37,10 @@ menuToggleBtn.addEventListener("click", () => {
 
         // Set the header border color back to the original color after a short delay
         setTimeout(() => {
-          header.style.borderBottomColor = "#1f1f1f";
-        }, 300);
+          if (!mobileNav.classList.contains("active")) {
+            header.style.borderBottomColor = `${DARK_GRAY}`;
+          }
+        }, ANIMATION_DURATION);
         
         // Remove the event listener to prevent memory leaks
         document.removeEventListener("click", closeNavOnClickOutside);
@@ -49,8 +54,10 @@ menuToggleBtn.addEventListener("click", () => {
   } else {
     // Set the header border color back to the original color after a short delay
     setTimeout(() => {
-      header.style.borderBottomColor = "#1f1f1f";
-    }, 300);
+      if (!mobileNav.classList.contains("active")) {
+        header.style.borderBottomColor = `${DARK_GRAY}`;
+      }
+    }, ANIMATION_DURATION);
   }
 });
 
@@ -73,8 +80,10 @@ navbarLinks.forEach(link => {
 
       // Set the header border color back to the original color after a short delay
       setTimeout(() => {
-        header.style.borderBottomColor = "#1f1f1f";
-      }, 300);
+        if (!mobileNav.classList.contains("active")) {
+          header.style.borderBottomColor = `${DARK_GRAY}`;
+        }
+      }, ANIMATION_DURATION);
 
       window.scrollTo({
         top: targetPosition,
