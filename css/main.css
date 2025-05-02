@@ -249,7 +249,7 @@ main .hero {
   width: 100%;
   aspect-ratio: 3840/2160;
   padding-inline: 6rem;
-  background-image: linear-gradient(to top right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 30%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0) 100%), url("../images/bg-header.webp");
+  background-image: linear-gradient(to top right, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 30%, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 0) 100%), url("../images/bg-header.webp");
   background-size: 100% auto;
   background-color: #e4e4e4;
   background-position: center;
