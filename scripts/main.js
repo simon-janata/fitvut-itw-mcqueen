@@ -6,58 +6,62 @@ const friendsImages = document.querySelectorAll(".friend-img");
 const rivalsImages = document.querySelectorAll(".rival-img");
 const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
+
+// Define constants for colors
 const DARK_GRAY = "#1f1f1f";
 const MCQUEEN_RED = "#9f0004";
-const ANIMATION_DURATION = 300;
 
 // Set initial border color for the header
 header.style.borderBottom = `3px solid ${DARK_GRAY}`;
 
 
+// Function to close the mobile navigation menu
+const closeMobileNav = () => {
+  if (mobileNav.classList.contains("active")) {
+    mobileNav.classList.remove("active");
+    menuToggleBtn.classList.remove("open");
+    menuToggleBtn.setAttribute("aria-expanded", "false");
+    
+    // Watching the end of the menu closing animation
+    const handleTransitionEnd = (event) => {
+      // Check if the event is for the mobileNav and if the property that ended is "transform"
+      if (event.target === mobileNav && event.propertyName === "transform") {
+        if (!mobileNav.classList.contains("active")) {
+          header.style.borderBottomColor = DARK_GRAY;
+        }
+        mobileNav.removeEventListener("transitionend", handleTransitionEnd);
+      }
+    };
+    
+    mobileNav.addEventListener("transitionend", handleTransitionEnd);
+  }
+}
+
+
 // Toggle mobile navigation menu
 menuToggleBtn.addEventListener("click", () => {
-  mobileNav.classList.toggle("active");
-  menuToggleBtn.classList.toggle("open");
+  const isMenuActive = mobileNav.classList.contains("active");
 
-  // Edit aria-expanded attribute for accessibility
-  const isExpanded = mobileNav.classList.contains("active");
-  menuToggleBtn.setAttribute("aria-expanded", isExpanded);
-
-  if (mobileNav.classList.contains("active")) {
-    // Set the header border color to red when the mobile menu is open
-    header.style.borderBottomColor = `${MCQUEEN_RED}`;
-
-    // Add event listener for clicks outside the navbar to close it
+  if (isMenuActive) {
+    closeMobileNav();
+  } else {
+    mobileNav.classList.add("active");
+    menuToggleBtn.classList.add("open");
+    menuToggleBtn.setAttribute("aria-expanded", "true");
+    header.style.borderBottomColor = MCQUEEN_RED;
+    
+    // Close the mobile navigation menu when clicking outside of it
     const closeNavOnClickOutside = (event) => {
-      // Check if the click was outside the mobileNav and menuToggleBtn
       if (!header.contains(event.target) && !mobileNav.contains(event.target) && !menuToggleBtn.contains(event.target)) {
-        // close the mobile navigation menu
-        mobileNav.classList.remove("active");
-        menuToggleBtn.classList.remove("open");
-
-        // Set the header border color back to the original color after a short delay
-        setTimeout(() => {
-          if (!mobileNav.classList.contains("active")) {
-            header.style.borderBottomColor = `${DARK_GRAY}`;
-          }
-        }, ANIMATION_DURATION);
-        
-        // Remove the event listener to prevent memory leaks
+        closeMobileNav();
         document.removeEventListener("click", closeNavOnClickOutside);
       }
     };
-
-    // Add the event listener after a short delay to ensure the menu is open before checking for clicks outside
+    
+    // Short delay to ensure the menu is open before checking for clicks outside
     setTimeout(() => {
       document.addEventListener("click", closeNavOnClickOutside);
     }, 10);
-  } else {
-    // Set the header border color back to the original color after a short delay
-    setTimeout(() => {
-      if (!mobileNav.classList.contains("active")) {
-        header.style.borderBottomColor = `${DARK_GRAY}`;
-      }
-    }, ANIMATION_DURATION);
   }
 });
 
@@ -75,15 +79,8 @@ navbarLinks.forEach(link => {
       const headerHeight = document.querySelector("header").offsetHeight;
       const targetPosition = targetSection.offsetTop - headerHeight - 50;
 
-      mobileNav.classList.remove("active");
-      menuToggleBtn.classList.remove("open");
-
-      // Set the header border color back to the original color after a short delay
-      setTimeout(() => {
-        if (!mobileNav.classList.contains("active")) {
-          header.style.borderBottomColor = `${DARK_GRAY}`;
-        }
-      }, ANIMATION_DURATION);
+      // Close the mobile navigation menu if it's open
+      closeMobileNav();
 
       window.scrollTo({
         top: targetPosition,
@@ -126,7 +123,6 @@ scrollToTopBtn.addEventListener("click", () => {
 // Close mobile menu on window resize if the screen is wider than 768px
 window.addEventListener("resize", function () {
   if (window.innerWidth > 768 && mobileNav.classList.contains("active")) {
-    mobileNav.classList.remove("active");
-    menuToggleBtn.classList.remove("open");
+    closeMobileNav();
   }
 });
