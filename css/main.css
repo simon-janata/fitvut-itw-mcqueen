@@ -144,6 +144,7 @@ header .desktop-nav .nav-links {
 header .desktop-nav .nav-links li a {
   position: relative;
   font-size: 1.15rem;
+  font-weight: 500;
 }
 header .desktop-nav .nav-links li a::after {
   content: "";
@@ -233,6 +234,7 @@ header .menu-toggle.open .bar:nth-child(3) {
 }
 .mobile-nav .nav-links li a {
   font-size: 1.15rem;
+  font-weight: 500;
   color: #f5f5f5;
 }
 
@@ -256,8 +258,8 @@ main .hero {
 }
 main .hero h1 {
   position: absolute;
-  top: 10%;
-  color: #1f1f1f;
+  top: 4rem;
+  color: #f5f5f5;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 main .hero .title-small-screen {
@@ -611,6 +613,7 @@ footer .footer-content ul {
 }
 footer .footer-content ul li a {
   font-size: 1.15rem;
+  font-weight: 500;
 }
 footer .footer-content .socials {
   display: flex;

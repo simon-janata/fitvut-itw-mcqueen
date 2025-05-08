@@ -147,6 +147,7 @@ header {
       li a {
         position: relative;
         font-size: 1.15rem;
+        font-weight: 500;
 
         &::after {
           content: "";
@@ -248,6 +249,7 @@ header {
 
     li a {
       font-size: 1.15rem;
+      font-weight: 500;
       color: $text-light;
     }
   }
@@ -280,8 +282,8 @@ main {
 
     h1 {
       position: absolute;
-      top: 10%;
-      color: $dark-gray;
+      top: 4rem;
+      color: $text-light;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
 
@@ -701,6 +703,7 @@ footer {
 
       li a {
         font-size: 1.15rem;
+        font-weight: 500;
       }
     }
 
